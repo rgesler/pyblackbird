@@ -121,7 +121,7 @@ def _format_set_zone_power(zone: int, power: bool) -> bytes:
 
 def _format_set_zone_source(zone: int, source: int) -> bytes:
     source = int(max(1, min(source,8)))
-    return '{}B{}.\r'.format(source, zone).encode()
+    return 'OUT0{}:0{}.'.format(source, zone).encode()
 
 def _format_set_all_zone_source(source: int) -> bytes:
     source = int(max(1, min(source,8)))
